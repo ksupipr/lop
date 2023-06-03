@@ -60,26 +60,17 @@ export const getTheme = (mode: PaletteMode) => {
     },
     palette: {
       mode,
-      primary: {
-        main: ThemeColors.black,
-        light: ThemeColors.grayLight,
-      },
-      secondary: {
-        main: ThemeColors.crimson,
-        light: ThemeColors.white,
-      },
-      text: {
-        primary: mode === 'light' ? ThemeColors.black : ThemeColors.white,
-        secondary: ThemeColors.grayDark,
-        disabled: ThemeColors.gray500,
-      },
-      background: {
-        default: ThemeColors.white,
-      },
+
     },
 
     components: {
-
+      MuiCssBaseline: {
+        styleOverrides: `
+        body {
+          background-color: ${mode === 'dark' ? ThemeColors.black : ThemeColors.white}
+        }
+        `,
+      },
     },
     typography: {
       fontWeightRegular: 400,

@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { FC, useContext } from 'react';
@@ -9,6 +9,10 @@ import { ThemeContext } from 'src/context/themeContext';
 
 import {
   Home,
+  ProjectsBoard,
+  ProjectsGraph,
+  ProjectsList,
+  Employes,
 } from 'src/pages';
 
 import { getTheme } from 'src/styles';
@@ -19,6 +23,7 @@ const Router: FC = () => {
 
   return (
     <ThemeProvider theme={themeMui}>
+      <CssBaseline />
       <Container
         sx={{
           maxWidth: '600px',
@@ -28,6 +33,10 @@ const Router: FC = () => {
       >
         <Routes>
           <Route path={Paths.home} element={<Home />} />
+          <Route path={Paths.board} element={<ProjectsBoard />} />
+          <Route path={Paths.graph} element={<ProjectsGraph />} />
+          <Route path={Paths.list} element={<ProjectsList />} />
+          <Route path={Paths.employes} element={<Employes />} />
           <Route path="*" element={<Navigate to={Paths.home} replace />} />
         </Routes>
       </Container>

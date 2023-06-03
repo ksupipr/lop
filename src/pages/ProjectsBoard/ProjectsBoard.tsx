@@ -2,10 +2,10 @@ import { Box } from '@mui/material';
 
 import { AppHeader } from 'src/organisms'
 
-const Home = () => (
+const ProjectsBoard = () => (
   <Box>
-    <AppHeader title='Главная' />
+    <AppHeader title='Доска' />
   </Box>
 );
 
-export default Home;
+export default ProjectsBoard;
